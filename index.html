@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasion por el Futbol - Tienda Online</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="imagenes/messi.webp" type="image/webp" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Pasion por el Futbol</div>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="contenido-hero" data-aos="fade-up">
+      <h1>Viví el Fútbol Argentino</h1>
+      <p>Botines, pelotas, camisetas y pasión en cada jugada.</p>
+      <a href="#productos" class="boton">Explorar Tienda</a>
+    </div>
+  </section>
+
+  <!-- FRASE -->
+  <section class="frase" data-aos="zoom-in">
+    <p>"Donde ruge la hinchada, nace la pasión."</p>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="seccion-clara" data-aos="fade-down">
+    <div class="contenido-seccion">
+      <h2>Nuestros Productos</h2>
+      <p>Equipate como un verdadero campeón: calidad, rendimiento y alma futbolera.</p>
+      <div class="grid-productos">
+        <div class="producto-item" data-aos="fade-up">
+          <img src="imagenes/botines-adidas-copa70.webp" alt="Botines de fútbol">
+          <h3>Botines</h3>
+          <p>Diseño liviano y máxima tracción para dominar la cancha.</p>
+        </div>
+        <div class="producto-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="imagenes/pelota.webp" alt="Pelota de fútbol">
+          <h3>Pelotas</h3>
+          <p>Oficiales y de entrenamiento, aprobadas por la pasión del barrio.</p>
+        </div>
+        <div class="producto-item" data-aos="fade-up" data-aos-delay="200">
+          <a href="camisetas.html" style="text-decoration: none;"><img src="imagenes/camisetas.jpg" alt="Camisetas">
+          <h3>Camisetas</h3>
+          <p>Todas las camisetas que busques. Retros y actuales.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <section class="separador" style="background-image: url('imagenes/banner.webp');" data-aos="fade-up"></section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="seccion-fondo" data-aos="fade-up">
+    <div class="contenido-seccion">
+      <h2>Quiénes Somos</h2>
+        <p>Somos amantes del fútbol argentino en todas sus formas. Desde la cancha del barrio hasta El Libertadores de América o el Cilindro, compartimos la misma pasión: vivir el fútbol en carne propia.</p>
+        </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="seccion-clara" data-aos="fade-up">
+    <div class="contenido-seccion">
+      <h2>Contacto</h2>
+      <p>¿Consultas o pedidos especiales? Escribinos a <strong>contacto@pasionporelfutbol.com</strong></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Pasion por el Futbol. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false, // se reinicia al scrollear hacia arriba
+      duration: 1000,
+    });
+  </script>
+
+</body>
+</html>
