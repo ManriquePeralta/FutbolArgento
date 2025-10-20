@@ -12,7 +12,7 @@
   --blanco: #f5f5f5;
   --gris: #dfe6de;
   --negro: #111;
-  --transition: all 0.4s ease-in-out;
+  --transition: all 0.35s cubic-bezier(.2,.9,.2,1);
 }
 
 body {
@@ -47,7 +47,7 @@ nav {
 
 .logo:hover {
   color: var(--verde-claro);
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .nav-links a {
@@ -61,7 +61,7 @@ nav {
 .nav-links a:hover,
 .nav-links a.activo {
   color: var(--verde);
-  transform: scale(1.1);
+  transform: translateY(-2px);
 }
 
 /* HERO */
@@ -91,12 +91,12 @@ nav {
   font-size: 4rem;
   color: var(--blanco);
   letter-spacing: 2px;
-  transition: var(--transition);
+  transition: color 0.25s ease, transform 0.35s ease;
 }
 
 .contenido-hero h1:hover {
   color: var(--verde-claro);
-  transform: scale(1.05);
+  transform: translateY(-4px);
 }
 
 .contenido-hero p {
@@ -113,14 +113,14 @@ nav {
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
   font-weight: bold;
-  transition: var(--transition);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
 }
 
 .boton:hover {
   background: var(--verde-claro);
-  transform: scale(1.1);
-  box-shadow: 0 0 10px var(--verde-claro);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(53,162,73,0.12);
 }
 
 /* FRASE */
@@ -169,28 +169,30 @@ nav {
 }
 
 .producto-item {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(10,10,10,0.06);
   overflow: hidden;
-  transition: var(--transition);
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s ease;
   cursor: pointer;
+  will-change: transform;
 }
 
 .producto-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(8,40,12,0.08);
 }
 
 .producto-item img {
   width: 100%;
   height: 25rem;
   object-fit: cover;
-  transition: var(--transition);
+  transition: transform 0.5s ease, filter 0.35s ease;
 }
 
 .producto-item img:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.05) saturate(1.02);
+  transform: scale(1.02);
 }
 
 .producto-item h3 {
@@ -204,6 +206,20 @@ nav {
   padding: 1rem;
   color: #444;
   font-size: 1rem;
+}
+
+/* AOS tweaks: evitar transformaciones 3D por libraerias y mantener suavidad */
+[data-aos^="fade"], [data-aos^="zoom"], [data-aos^="flip"] {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d; /* pero no perspective */
+}
+
+/* Accesibilidad: focus states */
+.boton:focus,
+.producto-item:focus {
+  outline: 3px solid rgba(53,162,73,0.18);
+  outline-offset: 4px;
 }
 
 /* SEPARADOR */
