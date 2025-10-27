@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bochas - Fútbol Argento</title>
+  <link rel="stylesheet" href="camisetas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" style="text-decoration: none;"><div class="logo">Fútbol Argento</div></a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="camisetas.html">Camisetas</a>
+      <a href="botines.html">Botines</a>
+      <a href="bochas.html" class="activo">Bochas</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="btn-login" id="open-auth">Iniciar sesión</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="contenido-hero" data-aos="fade-up">
+      <h1>Bochas de Fulbo</h1>
+      <p>⚽ La redonda que mueve pasiones en cada potrero 🇦🇷</p>
+      <a href="#productos" class="boton">Ver Bochas</a>
+    </div>
+  </section>
+
+  <!-- FRASE -->
+  <section class="frase" data-aos="fade-in">
+    “Sin bocha no hay fulbo, sin fulbo no hay vida.”
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="seccion-fondo">
+    <div class="contenido-seccion">
+      <h2 data-aos="fade-up">Nuestras Bochas</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Desde el potrero hasta el estadio, pelotas de calidad y alma argentina.</p>
+    </div>
+
+    <div class="grid-productos">
+      <!-- Producto 1 -->
+      <article class="producto-item" data-aos="fade-up" tabindex="0" aria-labelledby="bo1-title">
+        <img src="imagenes/bocha1.jpg" alt="Pelota profesional FIFA Quality">
+        <div class="producto-body">
+          <h3 id="bo1-title">Pelota Profesional</h3>
+          <p>Certificada FIFA Quality. Ideal para torneos oficiales, máxima precisión y durabilidad.</p>
+          <a class="boton" href="#" aria-label="Ver pelota profesional">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 2 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" aria-labelledby="bo2-title">
+        <img src="imagenes/bocha2.webp" alt="Pelota de entrenamiento">
+        <div class="producto-body">
+          <h3 id="bo2-title">Pelota Entrenamiento</h3>
+          <p>Resistente, liviana y con gran rebote. Perfecta para prácticas intensas y uso diario.</p>
+          <a class="boton" href="#" aria-label="Ver pelota entrenamiento">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 3 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-labelledby="bo3-title">
+        <img src="imagenes/bocha3.webp" alt="Pelota retro">
+        <div class="producto-body">
+          <h3 id="bo3-title">Pelota Retro</h3>
+          <p>Inspirada en los mundiales del pasado. Cuero sintético y costuras visibles, pura nostalgia.</p>
+          <a class="boton" href="#" aria-label="Ver pelota retro">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 4 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" aria-labelledby="bo4-title">
+        <img src="imagenes/bocha4.webp" alt="Pelota edición limitada">
+        <div class="producto-body">
+          <h3 id="bo4-title">Edición Limitada</h3>
+          <p>Diseño exclusivo con detalles dorados. Pensada para coleccionistas y fanáticos del fulbo.</p>
+          <a class="boton" href="#" aria-label="Ver pelota edición limitada">Ver</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Fútbol Argento — Donde la redonda nunca para de girar.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+  <!-- Modal: Login / Registro -->
+  <div class="auth-modal" id="auth-modal" aria-hidden="true">
+    <div class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="auth-close" id="auth-close" aria-label="Cerrar">×</button>
+      <h2 id="auth-title">Iniciar sesión / Registrarse</h2>
+      <div class="auth-tabs">
+        <button class="tab active" data-tab="login">Iniciar sesión</button>
+        <button class="tab" data-tab="register">Registrarse</button>
+      </div>
+
+      <form id="login-form" class="auth-form" data-tab-content="login">
+        <label>Usuario (email o nombre)
+          <input type="text" name="username" required />
+        </label>
+        <label>Contraseña
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-msg" id="login-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Entrar</button>
+      </form>
+
+      <form id="register-form" class="auth-form" data-tab-content="register" hidden>
+        <label>Usuario (solo letras y números)
+          <input type="text" name="username" required pattern="[A-Za-z0-9]+" />
+        </label>
+        <label>Contraseña (mín. 6, 1 mayúscula, 1 minúscula, 1 número)
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-helper">La contraseña debe contener: una letra MAYÚSCULA, una letra minúscula y un número. No se permiten símbolos.</div>
+        <div class="auth-msg" id="register-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

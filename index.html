@@ -26,6 +26,7 @@
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </div>
+    <button class="btn-login" id="open-auth">Iniciar sesión</button>
   </nav>
 
   <!-- HERO -->
@@ -50,13 +51,17 @@
       <div class="grid-productos">
         <div class="producto-item" data-aos="fade-up">
           <img src="imagenes/botines-adidas-copa70.webp" alt="Botines de fútbol">
+          <a href="botines.html" style="text-decoration: none;">
           <h3>Botines</h3>
           <p>Diseño liviano y máxima tracción para dominar la cancha.</p>
+          </a>
         </div>
         <div class="producto-item" data-aos="fade-up" data-aos-delay="100">
           <img src="imagenes/pelota.webp" alt="Pelota de fútbol">
+          <a href="pelotas.html" style="text-decoration: none;">
           <h3>Pelotas</h3>
           <p>Oficiales y de entrenamiento, aprobadas por la pasión del barrio.</p>
+          </a>
         </div>
         <div class="producto-item" data-aos="fade-up" data-aos-delay="200">
           <a href="camisetas.html" style="text-decoration: none;"><img src="imagenes/camisetas.jpg" alt="Camisetas">
@@ -94,12 +99,48 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="auth.js"></script>
   <script>
     AOS.init({
       once: false, // se reinicia al scrollear hacia arriba
       duration: 1000,
     });
   </script>
+
+  <!-- Modal: Login / Registro -->
+  <div class="auth-modal" id="auth-modal" aria-hidden="true">
+    <div class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="auth-close" id="auth-close" aria-label="Cerrar">×</button>
+      <h2 id="auth-title">Iniciar sesión / Registrarse</h2>
+      <div class="auth-tabs">
+        <button class="tab active" data-tab="login">Iniciar sesión</button>
+        <button class="tab" data-tab="register">Registrarse</button>
+      </div>
+
+      <form id="login-form" class="auth-form" data-tab-content="login">
+        <label>Usuario (email o nombre)
+          <input type="text" name="username" required />
+        </label>
+        <label>Contraseña
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-msg" id="login-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Entrar</button>
+      </form>
+
+      <form id="register-form" class="auth-form" data-tab-content="register" hidden>
+        <label>Usuario (solo letras y números)
+          <input type="text" name="username" required pattern="[A-Za-z0-9]+" />
+        </label>
+        <label>Contraseña (mín. 6, 1 mayúscula, 1 minúscula, 1 número)
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-helper">La contraseña debe contener: una letra MAYÚSCULA, una letra minúscula y un número. No se permiten símbolos.</div>
+        <div class="auth-msg" id="register-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>

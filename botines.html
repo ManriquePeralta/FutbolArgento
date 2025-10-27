@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Botines - Fútbol Argento</title>
+  <link rel="stylesheet" href="camisetas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" style="text-decoration: none;"><div class="logo">Fútbol Argento</div></a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="camisetas.html">Camisetas</a>
+      <a href="botines.html" class="activo">Botines</a>
+      <a href="bochas.html">Bochas</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="btn-login" id="open-auth">Iniciar sesión</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="contenido-hero" data-aos="fade-up">
+      <h1>Botines de Fulbo</h1>
+      <p>⚽ Comodidad, estilo y precisión en cada pisada 🇦🇷</p>
+      <a href="#productos" class="boton">Ver Botines</a>
+    </div>
+  </section>
+
+  <!-- FRASE -->
+  <section class="frase" data-aos="fade-in">
+    “Con buenos botines, hasta el potrero se siente Wembley.”
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="seccion-fondo">
+    <div class="contenido-seccion">
+      <h2 data-aos="fade-up">Nuestros Botines</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Hechos para quienes viven el fútbol desde adentro. Rendimiento, diseño y pasión.</p>
+    </div>
+
+    <div class="grid-productos">
+      <!-- Producto 1 -->
+      <article class="producto-item" data-aos="fade-up" tabindex="0" aria-labelledby="b1-title">
+        <img src="imagenes/botines1.webp" alt="Botines clásicos de cuero">
+        <div class="producto-body">
+          <h3 id="b1-title">Botín Clásico de Cuero</h3>
+          <p>Diseño tradicional con terminaciones premium. Ideal para canchas de pasto natural.</p>
+          <a class="boton" href="#" aria-label="Ver botín clásico de cuero">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 2 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" aria-labelledby="b2-title">
+        <img src="imagenes/botines2.webp" alt="Botines de velocidad">
+        <div class="producto-body">
+          <h3 id="b2-title">Botín Velocidad</h3>
+          <p>Livianos, resistentes y con suela aerodinámica. Perfectos para extremos y delanteros rápidos.</p>
+          <a class="boton" href="#" aria-label="Ver botín velocidad">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 3 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-labelledby="b3-title">
+        <img src="imagenes/botines3.jpg" alt="Botines sintéticos para césped">
+        <div class="producto-body">
+          <h3 id="b3-title">Botín Sintético</h3>
+          <p>Material técnico ideal para canchas de césped sintético. Agarre y comodidad asegurados.</p>
+          <a class="boton" href="#" aria-label="Ver botín sintético">Ver</a>
+        </div>
+      </article>
+
+      <!-- Producto 4 -->
+      <article class="producto-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" aria-labelledby="b4-title">
+        <img src="imagenes/botines4.webp" alt="Botines edición limitada">
+        <div class="producto-body">
+          <h3 id="b4-title">Edición Limitada</h3>
+          <p>Inspirados en los grandes ídolos del fútbol nacional. Diseño exclusivo y numerado.</p>
+          <a class="boton" href="#" aria-label="Ver botín edición limitada">Ver</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Fútbol Argento — Pasión que se lleva en los pies.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+
+  <!-- Modal: Login / Registro -->
+  <div class="auth-modal" id="auth-modal" aria-hidden="true">
+    <div class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <button class="auth-close" id="auth-close" aria-label="Cerrar">×</button>
+      <h2 id="auth-title">Iniciar sesión / Registrarse</h2>
+      <div class="auth-tabs">
+        <button class="tab active" data-tab="login">Iniciar sesión</button>
+        <button class="tab" data-tab="register">Registrarse</button>
+      </div>
+
+      <form id="login-form" class="auth-form" data-tab-content="login">
+        <label>Usuario (email o nombre)
+          <input type="text" name="username" required />
+        </label>
+        <label>Contraseña
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-msg" id="login-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Entrar</button>
+      </form>
+
+      <form id="register-form" class="auth-form" data-tab-content="register" hidden>
+        <label>Usuario (solo letras y números)
+          <input type="text" name="username" required pattern="[A-Za-z0-9]+" />
+        </label>
+        <label>Contraseña (mín. 6, 1 mayúscula, 1 minúscula, 1 número)
+          <input type="password" name="password" required />
+        </label>
+        <div class="auth-helper">La contraseña debe contener: una letra MAYÚSCULA, una letra minúscula y un número. No se permiten símbolos.</div>
+        <div class="auth-msg" id="register-msg" aria-live="polite"></div>
+        <button class="boton" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

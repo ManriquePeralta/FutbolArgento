@@ -1,0 +1,13 @@
+{
+  "name": "futbolargento-site",
+  "version": "1.0.0",
+  "description": "Sitio estático con servidor simple para auth (registro/login a archivo).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2"
+  }
+}

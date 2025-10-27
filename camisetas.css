@@ -222,6 +222,22 @@ nav {
   outline-offset: 4px;
 }
 
+/* Auth modal styles (same as styles.css to keep consistent for pages using camisetas.css) */
+.btn-login { background: transparent; border: 2px solid var(--verde); color: var(--verde-oscuro); padding: 0.4rem 0.8rem; border-radius: 999px; cursor: pointer; font-weight: 600; transition: background-color 0.22s ease, color 0.22s ease, transform 0.18s ease; }
+.btn-login:hover { background: var(--verde); color: white; transform: translateY(-2px); }
+.auth-modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(3,6,3,0.45); z-index: 2000; padding: 1rem; }
+.auth-modal[aria-hidden="true"] { display: none; }
+.auth-panel { background: white; width: 100%; max-width: 520px; border-radius: 12px; padding: 1.5rem; box-shadow: 0 18px 40px rgba(10,10,10,0.2); position: relative; }
+.auth-close { position: absolute; right: 10px; top: 8px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; }
+.auth-tabs { display: flex; gap: .5rem; margin: .5rem 0 1rem; }
+.auth-tabs .tab { flex: 1; padding: .5rem .6rem; border-radius: 8px; background: #f5f5f5; border: 1px solid #eee; cursor: pointer; }
+.auth-tabs .tab.active { background: var(--verde); color: white; }
+.auth-form label { display: block; margin-bottom: .6rem; color: #222; }
+.auth-form input { width: 100%; padding: .6rem; border-radius: 8px; border: 1px solid #ddd; margin-top: .3rem; }
+.auth-helper { font-size: .9rem; color: #666; margin-bottom: .6rem; }
+.auth-msg { min-height: 1.2rem; margin-bottom: .5rem; color: #a33; }
+.auth-form .boton { width: 100%; display: inline-block; text-align: center; }
+
 /* SEPARADOR */
 .separador {
   height: 50vh;
