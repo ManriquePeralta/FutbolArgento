@@ -276,3 +276,9 @@ footer {
 .auth-helper { font-size: .9rem; color: #666; margin-bottom: .6rem; }
 .auth-msg { min-height: 1.2rem; margin-bottom: .5rem; color: #a33; }
 .auth-form .boton { width: 100%; display: inline-block; text-align: center; }
+
+/* small dropdown menu for greeting button */
+.auth-menu { position: absolute; background: white; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); padding: .4rem 0; min-width: 160px; z-index: 3000; }
+.auth-menu a, .auth-menu button { display: block; width: 100%; padding: .6rem .9rem; text-align: left; background: transparent; border: none; color: #222; text-decoration: none; cursor: pointer; }
+.auth-menu a:hover, .auth-menu button:hover { background: #f3f7f3; }
+.auth-menu .username { font-weight: 700; color: var(--verde-oscuro); }

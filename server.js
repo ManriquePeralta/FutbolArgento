@@ -60,6 +60,12 @@ app.post('/api/login', async (req,res)=>{
   return res.json({ message: 'Ingreso exitoso.' });
 });
 
+// logout endpoint (stateless in this demo). Keep for client to call on sign-out.
+app.post('/api/logout', (req,res)=>{
+  // If you later implement sessions, invalidate them here.
+  return res.json({ message: 'Logout ok' });
+});
+
 app.listen(PORT, ()=>{
   console.log(`Server listening on http://localhost:${PORT}`);
 });
