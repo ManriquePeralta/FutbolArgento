@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   function showModal(){ modal.setAttribute('aria-hidden', 'false'); }
   function closeModal(){ modal.setAttribute('aria-hidden', 'true'); }
 
-  if (openBtns && openBtns.length){
-    openBtns.forEach(b => b.addEventListener('click', (e)=>{ e.preventDefault(); showModal(); }));
-  }
+  // handlers for open buttons will be establecidos por updateAuthButtons
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e)=>{ if (e.target===modal) closeModal(); });
 
@@ -181,9 +179,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     _doLogout();
   }
 
-  // initialize auth state from localStorage
+  // initialize auth state from localStorage (set handlers para logged in/out)
   try{
     const existing = localStorage.getItem('authUser');
-    if (existing) updateAuthButtons(existing);
+    updateAuthButtons(existing);
   } catch(e){}
 });
