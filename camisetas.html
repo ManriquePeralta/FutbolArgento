@@ -14,15 +14,17 @@
     <div class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="camisetas.html" class="activo">Camisetas</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="botines.html">Botines</a>
+      <a href="pelotas.html">Bochas</a>
     </div>
+    <button id="open-cart" class="btn-cart">Carrito (0)</button>
     <button class="btn-login" id="open-auth">Iniciar sesión</button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="contenido-hero" data-aos="fade-up">
-      <h1>Camisetas Exclusivas</h1>
+      <h1>Casacas Exclusivas</h1>
       <p>⚽ Inspiradas en la pasión por el fútbol argentino 🇦🇷</p>
       <a href="#productos" class="boton">Ver Productos</a>
     </div>
@@ -39,47 +41,12 @@
       <h2 data-aos="fade-up">Nuestras Camisetas</h2>
       <p data-aos="fade-up" data-aos-delay="100">Modelos únicos, alta calidad y diseños que transmiten identidad.</p>
     </div>
+    <div class="product-tools">
+      <input id="search-input" class="search-input" type="search" placeholder="Buscar camisetas..." />
+    </div>
 
-    <div class="grid-productos">
-      <!-- Producto 1 -->
-        <article class="producto-item" data-aos="fade-up" tabindex="0" aria-labelledby="p1-title">
-          <img src="imagenes/camiseta1.jpeg" alt="Camiseta edición clásica">
-          <div class="producto-body">
-            <h3 id="p1-title">Camiseta Edición Clásica</h3>
-            <p>Inspirada en la historia de nuestros clubes más emblemáticos. Tela respirable, costuras reforzadas.</p>
-            <a class="boton" href="#" aria-label="Ver camiseta edición clásica">Ver</a>
-          </div>
-        </article>
-
-      <!-- Producto 2 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" aria-labelledby="p2-title">
-        <img src="imagenes/camiseta1.jpeg" alt="Camiseta edición especial">
-        <div class="producto-body">
-          <h3 id="p2-title">Edición Especial</h3>
-          <p>Diseño exclusivo, edición limitada. Ideal para coleccionistas y fanáticos.</p>
-          <a class="boton" href="#" aria-label="Ver edición especial">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 3 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-labelledby="p3-title">
-        <img src="imagenes/camiseta2.jpg" alt="Camiseta retro">
-        <div class="producto-body">
-          <h3 id="p3-title">Camiseta Retro</h3>
-          <p>Un viaje al pasado glorioso del fútbol argentino. Cómoda, con detalles bordados.</p>
-          <a class="boton" href="#" aria-label="Ver camiseta retro">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 4 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" aria-labelledby="p4-title">
-        <img src="imagenes/camiseta2.jpg" alt="Camiseta entrenamiento">
-        <div class="producto-body">
-          <h3 id="p4-title">Camiseta Entrenamiento</h3>
-          <p>Ligera y moderna. Perfecta para entrenamientos intensos y uso diario.</p>
-          <a class="boton" href="#" aria-label="Ver camiseta entrenamiento">Ver</a>
-        </div>
-      </article>
+    <div id="product-list" class="grid-productos" aria-live="polite">
+      <!-- Productos renderizados por cart.js -->
     </div>
   </section>
 
@@ -90,6 +57,7 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="auth.js"></script>
+  <script src="cart.js"></script>
   <script>
     AOS.init({
       duration: 900,
@@ -97,6 +65,19 @@
       once: true
     });
   </script>
+
+  <!-- Cart modal -->
+  <div class="cart-modal" id="cart-modal" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <button class="cart-close" aria-label="Cerrar carrito">×</button>
+      <h3 id="cart-title">Tu Carrito</h3>
+      <div class="cart-body"></div>
+      <div class="cart-footer">
+        <div>Total: <span class="cart-total">$0.00</span></div>
+        <div><button class="boton">Finalizar compra</button></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal: Login / Registro -->
   <div class="auth-modal" id="auth-modal" aria-hidden="true">

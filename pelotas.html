@@ -15,16 +15,16 @@
       <a href="index.html">Inicio</a>
       <a href="camisetas.html">Camisetas</a>
       <a href="botines.html">Botines</a>
-      <a href="bochas.html" class="activo">Bochas</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="pelotas.html" class="activo">Bochas</a>
     </div>
+    <button id="open-cart" class="btn-cart">Carrito (0)</button>
     <button class="btn-login" id="open-auth">Iniciar sesión</button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="contenido-hero" data-aos="fade-up">
-      <h1>Bochas de Fulbo</h1>
+      <h1>Para meter goles como el diego</h1>
       <p>⚽ La redonda que mueve pasiones en cada potrero 🇦🇷</p>
       <a href="#productos" class="boton">Ver Bochas</a>
     </div>
@@ -32,7 +32,7 @@
 
   <!-- FRASE -->
   <section class="frase" data-aos="fade-in">
-    “Sin bocha no hay fulbo, sin fulbo no hay vida.”
+    “Sin bocha no hay futbol, sin futbol no hay vida.”
   </section>
 
   <!-- PRODUCTOS -->
@@ -42,46 +42,12 @@
       <p data-aos="fade-up" data-aos-delay="100">Desde el potrero hasta el estadio, pelotas de calidad y alma argentina.</p>
     </div>
 
-    <div class="grid-productos">
-      <!-- Producto 1 -->
-      <article class="producto-item" data-aos="fade-up" tabindex="0" aria-labelledby="bo1-title">
-        <img src="imagenes/bocha1.jpg" alt="Pelota profesional FIFA Quality">
-        <div class="producto-body">
-          <h3 id="bo1-title">Pelota Profesional</h3>
-          <p>Certificada FIFA Quality. Ideal para torneos oficiales, máxima precisión y durabilidad.</p>
-          <a class="boton" href="#" aria-label="Ver pelota profesional">Ver</a>
-        </div>
-      </article>
+    <div class="product-tools">
+      <input id="search-input" class="search-input" type="search" placeholder="Buscar pelotas..." />
+    </div>
 
-      <!-- Producto 2 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" aria-labelledby="bo2-title">
-        <img src="imagenes/bocha2.webp" alt="Pelota de entrenamiento">
-        <div class="producto-body">
-          <h3 id="bo2-title">Pelota Entrenamiento</h3>
-          <p>Resistente, liviana y con gran rebote. Perfecta para prácticas intensas y uso diario.</p>
-          <a class="boton" href="#" aria-label="Ver pelota entrenamiento">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 3 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-labelledby="bo3-title">
-        <img src="imagenes/bocha3.webp" alt="Pelota retro">
-        <div class="producto-body">
-          <h3 id="bo3-title">Pelota Retro</h3>
-          <p>Inspirada en los mundiales del pasado. Cuero sintético y costuras visibles, pura nostalgia.</p>
-          <a class="boton" href="#" aria-label="Ver pelota retro">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 4 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" aria-labelledby="bo4-title">
-        <img src="imagenes/bocha4.webp" alt="Pelota edición limitada">
-        <div class="producto-body">
-          <h3 id="bo4-title">Edición Limitada</h3>
-          <p>Diseño exclusivo con detalles dorados. Pensada para coleccionistas y fanáticos del fulbo.</p>
-          <a class="boton" href="#" aria-label="Ver pelota edición limitada">Ver</a>
-        </div>
-      </article>
+    <div id="product-list" class="grid-productos" aria-live="polite">
+      <!-- Productos renderizados por cart.js -->
     </div>
   </section>
 
@@ -91,6 +57,7 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="auth.js"></script>
+  <script src="cart.js"></script>
   <script>
     AOS.init({
       duration: 900,
@@ -131,6 +98,18 @@
         <div class="auth-msg" id="register-msg" aria-live="polite"></div>
         <button class="boton" type="submit">Crear cuenta</button>
       </form>
+    </div>
+  </div>
+  <!-- Cart modal -->
+  <div class="cart-modal" id="cart-modal" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <button class="cart-close" aria-label="Cerrar carrito">×</button>
+      <h3 id="cart-title">Tu Carrito</h3>
+      <div class="cart-body"></div>
+      <div class="cart-footer">
+        <div>Total: <span class="cart-total">$0.00</span></div>
+        <div><button class="boton">Finalizar compra</button></div>
+      </div>
     </div>
   </div>
 </body>

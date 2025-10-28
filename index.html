@@ -19,13 +19,14 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">Pasion por el Futbol</div>
+    <div class="logo">Futbol Argento</div>
     <div class="nav-links">
-      <a href="#inicio">Inicio</a>
+      <a href="#inicio" class="activo">Inicio</a>
       <a href="#productos">Productos</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </div>
+    <button id="open-cart" class="btn-cart">Carrito (0)</button>
     <button class="btn-login" id="open-auth">Iniciar sesión</button>
   </nav>
 
@@ -100,12 +101,26 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="auth.js"></script>
+  <script src="cart.js"></script>
   <script>
     AOS.init({
       once: false, // se reinicia al scrollear hacia arriba
       duration: 1000,
     });
   </script>
+
+  <!-- Cart modal -->
+  <div class="cart-modal" id="cart-modal" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <button class="cart-close" aria-label="Cerrar carrito">×</button>
+      <h3 id="cart-title">Tu Carrito</h3>
+      <div class="cart-body"></div>
+      <div class="cart-footer">
+        <div>Total: <span class="cart-total">$0.00</span></div>
+        <div><button class="boton">Finalizar compra</button></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal: Login / Registro -->
   <div class="auth-modal" id="auth-modal" aria-hidden="true">

@@ -164,6 +164,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function _doLogout(){
     try{ localStorage.removeItem('authUser'); } catch(e){}
+    try{ sessionStorage.removeItem('futbol_cart'); } catch(e){}
+    // notify other scripts
+    try{ document.dispatchEvent(new CustomEvent('cartUpdated')); } catch(e){}
     updateAuthButtons(null);
     closeAuthMenu();
     // give feedback

@@ -15,16 +15,16 @@
       <a href="index.html">Inicio</a>
       <a href="camisetas.html">Camisetas</a>
       <a href="botines.html" class="activo">Botines</a>
-      <a href="bochas.html">Bochas</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="pelotas.html">Bochas</a>
     </div>
+    <button id="open-cart" class="btn-cart">Carrito (0)</button>
     <button class="btn-login" id="open-auth">Iniciar sesión</button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="contenido-hero" data-aos="fade-up">
-      <h1>Botines de Fulbo</h1>
+      <h1>Los mejores botines</h1>
       <p>⚽ Comodidad, estilo y precisión en cada pisada 🇦🇷</p>
       <a href="#productos" class="boton">Ver Botines</a>
     </div>
@@ -42,46 +42,15 @@
       <p data-aos="fade-up" data-aos-delay="100">Hechos para quienes viven el fútbol desde adentro. Rendimiento, diseño y pasión.</p>
     </div>
 
-    <div class="grid-productos">
-      <!-- Producto 1 -->
-      <article class="producto-item" data-aos="fade-up" tabindex="0" aria-labelledby="b1-title">
-        <img src="imagenes/botines1.webp" alt="Botines clásicos de cuero">
-        <div class="producto-body">
-          <h3 id="b1-title">Botín Clásico de Cuero</h3>
-          <p>Diseño tradicional con terminaciones premium. Ideal para canchas de pasto natural.</p>
-          <a class="boton" href="#" aria-label="Ver botín clásico de cuero">Ver</a>
-        </div>
-      </article>
+    <div class="product-tools">
+      <input id="search-input" class="search-input" type="search" placeholder="Buscar botines..." />
+    </div>
 
-      <!-- Producto 2 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" aria-labelledby="b2-title">
-        <img src="imagenes/botines2.webp" alt="Botines de velocidad">
-        <div class="producto-body">
-          <h3 id="b2-title">Botín Velocidad</h3>
-          <p>Livianos, resistentes y con suela aerodinámica. Perfectos para extremos y delanteros rápidos.</p>
-          <a class="boton" href="#" aria-label="Ver botín velocidad">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 3 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" aria-labelledby="b3-title">
-        <img src="imagenes/botines3.jpg" alt="Botines sintéticos para césped">
-        <div class="producto-body">
-          <h3 id="b3-title">Botín Sintético</h3>
-          <p>Material técnico ideal para canchas de césped sintético. Agarre y comodidad asegurados.</p>
-          <a class="boton" href="#" aria-label="Ver botín sintético">Ver</a>
-        </div>
-      </article>
-
-      <!-- Producto 4 -->
-      <article class="producto-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" aria-labelledby="b4-title">
-        <img src="imagenes/botines4.webp" alt="Botines edición limitada">
-        <div class="producto-body">
-          <h3 id="b4-title">Edición Limitada</h3>
-          <p>Inspirados en los grandes ídolos del fútbol nacional. Diseño exclusivo y numerado.</p>
-          <a class="boton" href="#" aria-label="Ver botín edición limitada">Ver</a>
-        </div>
-      </article>
+    <div id="product-list" class="grid-productos" aria-live="polite">
+      <!-- Productos renderizados por cart.js -->
+    </div>
+    
+    <!-- original product grid removed (rendered dynamically) -->
     </div>
   </section>
 
@@ -91,6 +60,7 @@
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="auth.js"></script>
+  <script src="cart.js"></script>
   <script>
     AOS.init({
       duration: 900,
