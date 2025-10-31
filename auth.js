@@ -71,11 +71,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
       loginMsg.textContent = '';
       const form = new FormData(loginForm);
       const username = (form.get('username')||'').trim();
+      const email = (form.get('email')||'').trim();
       const password = form.get('password')||'';
+
+      // simple email validation: must contain '@' and a '.' after the '@'
+      function isEmailValid(e){
+        if (!e) return false;
+        const at = e.indexOf('@');
+        const dot = e.lastIndexOf('.');
+        return at > 0 && dot > at + 1 && dot < e.length - 1;
+      }
+
+      if (!isEmailValid(email)){
+        loginMsg.style.color = '#a33';
+        loginMsg.textContent = 'Por favor ingresa un E-Mail válido (debe contener @ y un dominio).';
+        return;
+      }
+
       try{
         const res = await fetch('/api/login', {
           method: 'POST', headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({username, password})
+          body: JSON.stringify({username, email, password})
         });
         const data = await res.json();
         if (res.ok) {
